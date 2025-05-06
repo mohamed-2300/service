@@ -4,11 +4,12 @@ let channel;
 
 async function startRabbitMQ() {
   try {
-    const connection = await amqp.connect('amqp://localhost');
+    const connection = await amqp.connect(process.env.RABBITMQ_URL);
+
     channel = await connection.createChannel();
     console.log('Connexion RabbitMQ établie (event-service)');
   } catch (error) {
-    console.error('Erreur RabbitMQ:', error.message);
+    console.error('Erreur RabbitMQ:', error);
   }
 }
 

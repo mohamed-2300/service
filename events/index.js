@@ -3,7 +3,6 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const connectDB = require('./config/db');
 const startRabbitMQ = require('./rabbitmq/publisher');
-const connectDB = require('./config/db');
 
 dotenv.config();
 const app = express();
@@ -16,9 +15,6 @@ connectDB();
 // Routes
 const eventRoutes = require('./routes/eventRoutes');
 app.use('/events', eventRoutes);
-
-// db
-connectDB();
 
 // RabbitMQ
 startRabbitMQ();

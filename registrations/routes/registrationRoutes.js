@@ -7,4 +7,3 @@ router.post('/', auth, registerToEvent);
 router.get('/', auth, getUserRegistrations);
 
 module.exports = router;
-don
