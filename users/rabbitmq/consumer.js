@@ -3,7 +3,7 @@ const amqp = require('amqplib');
 
 async function startConsumer() {
   try {
-    const connection = await amqp.connect('amqp://localhost');
+    const connection = await amqp.connect('amqp://guest:guest@localhost:5672');
     const channel = await connection.createChannel();
 
     // Déclarer les files d’écoute

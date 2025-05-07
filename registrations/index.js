@@ -1,7 +1,8 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
-const connectRabbitMQ = require('./rabbitmq/consumer');
+const { connectRabbitMQ } = require('./rabbitmq/publisher');
+
 
 const registrationRoutes = require('./routes/registrationRoutes');
 

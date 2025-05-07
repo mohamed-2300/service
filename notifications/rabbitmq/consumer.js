@@ -3,7 +3,7 @@ const Notification = require('../models/Notification');
 
 const connectRabbitMQ = async () => {
   try {
-    const connection = await amqp.connect('amqp://localhost');
+    const connection = await amqp.connect('amqp://guest:guest@localhost:5672');
     const channel = await connection.createChannel();
 
     await channel.assertQueue('user_registered');
